@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ZipKey - Upload File</title>
+  <style>
+    body {
+      background: #f5f7fa;
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      padding: 10px 20px;
+      background-color: #f5f7fa;
+      
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+    }
+
+    header img {
+      height: 100px;
+      margin-right: 20px;
+    }
+
+    header h1 {
+      font-size: 30px;
+      color: #333;
+      margin: 0;
+    }
+
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 80%;
+      max-width: 900px;
+      margin: 100px auto 0;
+    }
+
+    .upload-box, .download-box {
+      background: #ffffff;
+      padding: 30px 40px;
+      border-radius: 12px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+
+    .upload-box {
+      width: 100%;
+      max-width: 400px;
+      margin-right: 20px;
+    }
+
+    .download-box {
+      width: 100%;
+      max-width: 250px;
+    }
+
+    h2 {
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    .download-header {
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 15px;
+      color: #333;
+    }
+
+    input[type="file"],
+    select {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0 20px;
+      border: 1px solid #3350f1;
+      border-radius: 5px;
+    }
+
+    label {
+      display: block;
+      text-align: left;
+      margin: 10px 0 5px;
+      color: #555;
+    }
+
+    button,
+    a {
+      background-color: #3b82f6;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      font-size: 16px;
+      border-radius: 6px;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover,
+    a:hover {
+      background-color: #3b82f6;
+    }
+
+    .footer {
+      margin-top: 15px;
+      font-size: 12px;
+      color: #888;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header with logo -->
+  <header>
+    <img src="zipkey.png" alt="ZipKey Logo">
+    <h1>ZipKey</h1>
+  </header>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+  <!-- Main content -->
+  <div class="container">
+    <div class="upload-box">
+      <h2>Upload File to ZipKey </h2>
+      <form action="/upload" method="POST" enctype="multipart/form-data">
+        <label for="file">Choose a File:</label>
+        <input type="file" name="file" required>
+
+        <label for="expiry">Choose Expiry Option:</label>
+        <select name="expiryOption" id="expiry">
+          <option value="24h">24 hours (multiple downloads)</option>
+          <option value="48h">48 hours (multiple downloads)</option>
+          <option value="once">One-time download</option>
+        </select>
+
+        <button type="submit">Upload </button>
+      </form>
+      <div class="footer">Your files are private and auto-deleted after expiry.</div>
+    </div>
+
+    <div class="download-box">
+      <div class="download-header">Download Files from ZipKey </div>
+      <a href="/download.html"> Download </a>
+    </div>
+  </div>
+
+</body>
+</html>

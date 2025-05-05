@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Download File - ZipKey</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #e0fefc;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .box {
+      background: #ffffff;
+      padding: 30px 40px;
+      border-radius: 16px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+    h2 {
+      color: #000000;
+      margin-bottom: 20px;
+    }
+    input[type="text"] {
+      padding: 12px;
+      width: 220px;
+      border: 1px solid #cbd5e1;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      font-size: 16px;
+    }
+    button, .home-btn {
+      padding: 10px 20px;
+      background-color: #2563eb;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-weight: 500;
+      cursor: pointer;
+      text-decoration: none;
+      margin: 10px;
+    }
+    .home-btn {
+      background-color: #10b981;
+      display: inline-block;
+    }
+    button:hover, .home-btn:hover {
+      opacity: 0.9;
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <h2> Enter Your ZipKey Code</h2>
+    <form onsubmit="event.preventDefault(); downloadFile();">
+      <input type="text" id="codeInput" placeholder="Enter 6-digit code" required />
+      <br />
+      <button type="submit">Download File</button>
+    </form>
+    <a class="home-btn" href="/index.html"> Back to Home</a>
+  </div>
+
+  <script>
+    function downloadFile() {
+      const code = document.getElementById('codeInput').value.trim();
+      if (code.length === 6 && /^\d+$/.test(code)) {
+        window.location.href = '/download/' + code;
+      } else {
+        alert("Please enter a valid 6-digit code.");
+      }
+    }
+  </script>
+</body>
+</html>
